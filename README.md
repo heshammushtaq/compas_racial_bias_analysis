@@ -1,4 +1,3 @@
-# Compas_Racial_Bias_Analysis
 # README
 
 ## Purpose of the analysis
@@ -56,7 +55,7 @@ What they are used for in this notebook:
    The notebook expects the file named `compas-scores-two-years.csv`.
 
 2. Open the notebook:
-   `Lecture_01_Alignment_Python_G23607459.ipynb`
+   `Lecture_01_alignment_Python_fixed_executed (1).ipynb`
 
 3. Run the notebook from top to bottom.
 
@@ -79,3 +78,5 @@ What they are used for in this notebook:
    - logistic regression coefficients with the same direction as the R script
    - interpretation values near 1.4528, 1.1948, and 2.4961
    - overall confusion matrix with counts 2653, 945, 710, and 1864
+
+This README is only for the Python notebook part of the assignment.
