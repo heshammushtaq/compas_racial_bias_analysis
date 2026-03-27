@@ -55,7 +55,7 @@ What they are used for in this notebook:
    The notebook expects the file named `compas-scores-two-years.csv`.
 
 2. Open the notebook:
-   `Lecture_01_alignment_Python_fixed_executed (1).ipynb`
+   `Lecture_01_Alignment_Python_G23607459.ipynb`
 
 3. Run the notebook from top to bottom.
 
