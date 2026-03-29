@@ -1,73 +1,111 @@
-**Purpose of the analysis**
+# COMPAS Analysis in Python
 
-This notebook reproduces the Lecture 01 R workflow in Python using the COMPAS data.
+## Purpose of the Analysis
 
-The goal is to follow the same analysis flow from the R version:
+This notebook reproduces the **Lecture 01** R workflow in Python using the **COMPAS** dataset.
 
-load the dataset
-clean and filter the data using the same rules
-do the same exploratory summaries and plots
-fit the same logistic regression model
-evaluate the model using the same confusion-matrix style checks and race-level diagnostics
-After the filtering steps, the working sample has 6172 rows.
+The goal is to follow the same analysis pipeline as the original R version:
 
-A few of the main results from the notebook are:
+- Load the dataset
+- Clean and filter the data using the same rules
+- Produce the same exploratory summaries and plots
+- Fit the same logistic regression model
+- Evaluate the model using confusion-matrix style checks and race-level diagnostics
 
-correlation between COMPAS score and length of stay: about 0.207
-two-year recidivism count: 2809
-two-year recidivism rate: about 45.51%
-African-American defendants are estimated to be about 1.45 times more likely than white defendants to receive a higher score, holding the other variables in the model fixed
-women are about 1.19 times more likely than men to receive a higher score
-defendants under 25 are about 2.50 times more likely than the 25-45 group to receive a higher score
-The notebook also reproduces the model evaluation section. The overall confusion matrix in the final version is:
+After applying the filtering steps, the final working sample contains **6,172 rows**.
 
-Predicted No Recid / Actual No Recid: 2653
-Predicted No Recid / Actual Recid: 945
-Predicted Recid / Actual No Recid: 710
-Predicted Recid / Actual Recid: 1864
-Then the notebook breaks those results out by race and compares false positive rate and false negative rate across groups, which is the same general point of the R script's diagnostic section.
+## Main Results
 
-Python libraries used
-The notebook uses these libraries:
+A few of the key results reproduced in the notebook are:
 
-pandas
-numpy
-statsmodels
-matplotlib
-IPython.display
-warnings
-What they are used for in this notebook:
+- **Correlation between COMPAS score and length of stay:** approximately **0.207**
+- **Two-year recidivism count:** **2,809**
+- **Two-year recidivism rate:** approximately **45.51%**
+- **African-American defendants** are estimated to be about **1.45 times more likely** than white defendants to receive a higher score, holding other model variables constant
+- **Women** are estimated to be about **1.19 times more likely** than men to receive a higher score
+- **Defendants under 25** are estimated to be about **2.50 times more likely** than defendants aged 25–45 to receive a higher score
 
-pandas: loading the CSV file, filtering rows, creating summary tables, crosstabs, and grouped metrics
-numpy: numeric work and conditional logic
-statsmodels: fitting the logistic regression model with the same structure as the R script
-matplotlib: plotting the COMPAS decile score distributions
-IPython.display: printing the model summary in notebook form
-warnings: hiding warning messages so the notebook output stays cleaner
-Instructions for reproducing the results
-Put the notebook and the data file in the same working folder. The notebook expects the file named compas-scores-two-years.csv.
+## Model Evaluation
 
-Open the notebook: Lecture_01_Alignment_Python_G23607459.ipynb
+The notebook also reproduces the model evaluation section from the R workflow.
+
+### Overall Confusion Matrix
+
+The final confusion matrix is:
+
+- **Predicted No Recid / Actual No Recid:** 2653
+- **Predicted No Recid / Actual Recid:** 945
+- **Predicted Recid / Actual No Recid:** 710
+- **Predicted Recid / Actual Recid:** 1864
+
+The notebook then breaks these results down by race and compares:
+
+- False positive rate
+- False negative rate
+
+This matches the same general diagnostic goal as the original R script.
+
+## Python Libraries Used
+
+The notebook uses the following libraries:
+
+- `pandas`
+- `numpy`
+- `statsmodels`
+- `matplotlib`
+- `IPython.display`
+- `warnings`
+
+### What Each Library Is Used For
+
+- **pandas**: loading the CSV file, filtering rows, creating summary tables, crosstabs, and grouped metrics
+- **numpy**: numerical operations and conditional logic
+- **statsmodels**: fitting the logistic regression model with the same structure as the R script
+- **matplotlib**: plotting COMPAS decile score distributions
+- **IPython.display**: displaying the model summary in notebook format
+- **warnings**: suppressing warning messages to keep notebook output cleaner
+
+## Instructions for Reproducing the Results
+
+Place the notebook and the data file in the same working directory. The notebook expects the dataset file to be named:
+
+`compas-scores-two-years.csv`
+
+Open the notebook:
+
+`Lecture_01_Alignment_Python_G23607459.ipynb`
 
 Run the notebook from top to bottom.
 
+### Notebook Workflow
+
 The workflow in the notebook is:
 
-import libraries
-read the COMPAS dataset
-filter and clean the rows the same way as in the R script
-create the transformed variables used in the analysis
-generate descriptive summaries
-plot the decile score distributions
-fit the logistic regression model
-compute the predicted classes
-print the confusion matrix and race-level diagnostics
-If everything is set up correctly, you should see the main checkpoint outputs:
+1. Import libraries
+2. Read the COMPAS dataset
+3. Filter and clean the rows using the same rules as the R script
+4. Create the transformed variables used in the analysis
+5. Generate descriptive summaries
+6. Plot the decile score distributions
+7. Fit the logistic regression model
+8. Compute the predicted classes
+9. Print the confusion matrix and race-level diagnostics
 
-filtered sample size: 6172
-correlation between score and length of stay: about 0.2073
-two-year recidivism count: 2809
-two-year recidivism rate: about 45.51
-logistic regression coefficients with the same direction as the R script
-interpretation values near 1.4528, 1.1948, and 2.4961
-overall confusion matrix with counts 2653, 945, 710, and 1864
+## Expected Checkpoint Outputs
+
+If everything is set up correctly, you should see results close to the following:
+
+- **Filtered sample size:** `6172`
+- **Correlation between score and length of stay:** approximately `0.2073`
+- **Two-year recidivism count:** `2809`
+- **Two-year recidivism rate:** approximately `45.51`
+- **Logistic regression coefficients** with the same directions as in the R script
+- **Interpretation values** near:
+  - `1.4528`
+  - `1.1948`
+  - `2.4961`
+- **Overall confusion matrix counts:**
+  - `2653`
+  - `945`
+  - `710`
+  - `1864`
