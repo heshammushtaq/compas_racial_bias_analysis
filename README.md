@@ -1,4 +1,5 @@
-Purpose of the analysis
+**Purpose of the analysis**
+
 This notebook reproduces the Lecture 01 R workflow in Python using the COMPAS data.
 
 The goal is to follow the same analysis flow from the R version:
