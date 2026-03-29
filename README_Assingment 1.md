@@ -79,4 +79,3 @@ What they are used for in this notebook:
    - interpretation values near 1.4528, 1.1948, and 2.4961
    - overall confusion matrix with counts 2653, 945, 710, and 1864
 
-This README is only for the Python notebook part of the assignment.
